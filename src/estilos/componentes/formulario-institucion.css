@@ -1,0 +1,96 @@
+.formulario-institucion {
+    margin-top: 24px;
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.formulario-institucion__campo {
+    flex: 1;
+}
+
+.formulario-institucion__label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.formulario-institucion__input {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    transition: all 0.2s ease;
+}
+
+.formulario-institucion__input:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.formulario-institucion__boton {
+    height: 52px;
+
+    padding: 0 24px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #2563eb
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.formulario-institucion__boton:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 16px rgba(37, 99, 235, 0.25);
+}
+
+@media (max-width: 768px) {
+    .formulario-institucion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .formulario-institucion__boton {
+        width: 100%;
+    }
+}

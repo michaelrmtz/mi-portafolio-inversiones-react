@@ -1,0 +1,71 @@
+.formulario-inversion {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formulario-inversion__grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.formulario-inversion__label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.formulario-inversion__input {
+    padding: 10px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+.formulario-inversion__tipos {
+    display: flex;
+    gap: 8px;
+}
+
+.formulario-inversion__boton {
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.formulario-inversion__boton:hover {
+    background-color: #1d4ed8;
+}
+
+.formulario-inversion__info {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    font-size: 14px;
+}
+
+.formulario-inversion__tipo-card {
+    flex: 1;
+
+    padding: 8px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.formulario-inversion__tipo-card:hover {
+    background-color: #f9fafb;
+}

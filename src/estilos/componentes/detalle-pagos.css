@@ -1,0 +1,96 @@
+.detalle-pagos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detalle-pagos__titulo {
+    margin: 0;
+}
+
+.detalle-pagos__resumen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.detalle-pagos__tarjeta {
+    padding: 14px;
+    background: #f8fafc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detalle-pagos__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.detalle-pagos__item {
+    padding: 16px;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.detalle-pagos__acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.detalle-pagos__acciones button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.detalle-pagos__acciones button:hover {
+    transform: scale(1.15);
+}
+
+.detalle-pagos__info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.detalle-pagos__estado {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.detalle-pagos__fecha {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.detalle-pagos__importe {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.detalle-pagos__tarjeta:nth-child(1) {
+    border-left: 4px solid #3b82f6;
+}
+
+.detalle-pagos__tarjeta:nth-child(2) {
+    border-left: 4px solid #22c55e;
+}
+
+.detalle-pagos__tarjeta:nth-child(3) {
+    border-left: 4px solid #f59e0b;
+}

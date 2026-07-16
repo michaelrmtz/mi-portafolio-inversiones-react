@@ -1,0 +1,58 @@
+.confirmar-eliminar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.confirmar-eliminar__mensaje {
+    font-size: 18px;
+    color: #111827;
+    margin: 0;
+}
+
+.confirmar-eliminar__detalle {
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.confirmar-eliminar__acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.confirmar-eliminar__cancelar {
+    padding: 12px 18px;
+
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.confirmar-eliminar__cancelar:hover {
+    background: #f3f4f6;
+}
+
+.confirmar-eliminar__eliminar {
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #dc2626;
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.confirmar-eliminar__eliminar:hover {
+    background: #b91c1c;
+}

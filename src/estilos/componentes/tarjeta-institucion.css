@@ -1,0 +1,281 @@
+.tarjeta-institucion {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    border-top: 4px solid #7c3aed;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-institucion__encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tarjeta-institucion__icono {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7c3aed;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-institucion__nombre {
+    font-size: 16px;
+}
+
+.tarjeta-institucion__monto {
+    margin-top: 20px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #16a34a;
+}
+
+.tarjeta-institucion__badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 12px;
+    background-color: #f3e8ff;
+    color: #7c3aed;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-institucion__badge:hover {
+    background-color: #e9d5ff;
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+}
+
+.tarjeta-institucion__boton-accion {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #f3f4f6;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tarjeta-institucion__boton-accion:hover {
+    background-color: #fee2e2;
+    transform: scale(1.08);
+}
+
+.tarjeta-institucion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    border-top-width: 5px;
+}
+
+.tarjeta-institucion:hover .tarjeta-institucion__icono {
+    transform: scale(1.05);
+}
+
+.tarjeta-institucion__inversiones {
+    margin-top: 16px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid #e5e7eb;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-height: 125px;
+
+    overflow-y: auto;
+
+    padding-right: 4px;
+}
+
+.tarjeta-institucion__inversion {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9fafb;
+}
+
+.tarjeta-institucion__sin-inversiones {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.tarjeta-institucion__inversion button {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tarjeta-institucion__rendimiento {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tarjeta-institucion__detalle {
+    display: block;
+    margin-top: 2px;
+}
+
+.tarjeta-institucion__acciones-inversion {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tarjeta-institucion__acciones-inversion {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+.tarjeta-institucion__acciones-inversion button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #eef2ff;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tarjeta-institucion__acciones-inversion button:hover {
+    background-color: #dbeafe;
+    transform: translateY(-2px);
+}
+
+.tarjeta-institucion__boton-agregar {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #6366f1;
+    color: white;
+
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px rgba(99, 102, 241, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.tarjeta-institucion__boton-agregar:hover {
+    background-color: #4f46e5;
+    transform: scale(1.05);
+    box-shadow:
+        0 6px 14px rgba(99, 102, 241, 0.30);
+}
+
+.tarjeta-institucion__pie {
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarjeta-institucion__titulo {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.tarjeta-institucion__nombre-fila {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tarjeta-institucion__nombre {
+    margin: 0;
+    font-size: 16px;
+}
+
+.tarjeta-institucion__editar-nombre {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    padding: 4px;
+
+    font-size: 14px;
+
+    opacity: 0.6;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tarjeta-institucion__editar-nombre:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.tarjeta-institucion__inversion>div:first-child {
+    font-size: 14px;
+}
+
+.tarjeta-institucion__inversiones::-webkit-scrollbar {
+    width: 5px;
+}
+
+.tarjeta-institucion__inversiones::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tarjeta-institucion__inversiones::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+
+    border-radius: 999px;
+}
+
+.tarjeta-institucion__inversiones::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}

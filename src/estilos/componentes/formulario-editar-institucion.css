@@ -1,0 +1,82 @@
+.formulario-editar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario-editar label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.formulario-editar input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.formulario-editar input:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.formulario-editar__acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.formulario-editar__cancelar {
+    padding: 12px 18px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    background: white;
+    color: #374151;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.formulario-editar__cancelar:hover {
+    background: #f3f4f6;
+}
+
+.formulario-editar__guardar {
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #6366f1;
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.formulario-editar__guardar:hover {
+    background: #4f46e5;
+    transform: translateY(-1px);
+}

@@ -1,0 +1,126 @@
+.tarjeta-proximos-pagos {
+    margin: 16px 0;
+
+    padding: 16px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-proximos-pagos__titulo {
+    margin: 0 0 12px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.tarjeta-proximos-pagos__vacio {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.tarjeta-proximos-pagos__lista {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tarjeta-proximos-pagos__item {
+    flex: 0 0 220px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #eef2ff
+        );
+
+    border: 1px solid #dbeafe;
+
+    transition: all 0.2s ease;
+}
+
+.tarjeta-proximos-pagos__item:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 16px rgba(37, 99, 235, 0.12);
+}
+
+.tarjeta-proximos-pagos__institucion {
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.tarjeta-proximos-pagos__inversion {
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+.tarjeta-proximos-pagos__fecha {
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    color: #2563eb;
+}
+
+.tarjeta-proximos-pagos__importe {
+    margin-top: 6px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #059669;
+}
+
+.tarjeta-proximos-pagos__dias {
+    margin-top: 8px;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 3px 8px;
+
+    border-radius: 999px;
+
+    background-color: #dbeafe;
+
+    color: #1d4ed8;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.tarjeta-proximos-pagos__lista::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tarjeta-proximos-pagos__lista::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 999px;
+}
+
+.tarjeta-proximos-pagos__lista::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 999px;
+}

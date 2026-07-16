@@ -1,0 +1,128 @@
+.menu-principal {
+    position: static;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background-color: white;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.menu-principal__contenido {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 12px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-principal__logo {
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #7c3aed;
+}
+
+.menu-principal__navegacion {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-principal__enlace {
+    position: relative;
+
+    border: none;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #374151;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.menu-principal__enlace:hover:not(.menu-principal__enlace--activo) {
+    color: #7c3aed;
+
+    transform: translateY(-1px);
+}
+
+.menu-principal__enlace:hover:not(.menu-principal__enlace--activo)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: -6px;
+
+    height: 2px;
+
+    border-radius: 2px;
+
+    background-color: #7c3aed;
+}
+
+.menu-principal__enlace--activo {
+    background-color: #7c3aed;
+    color: white;
+
+    box-shadow:
+        0 4px 12px rgba(124, 58, 237, 0.25);
+}
+
+.menu-principal__enlace--activo:hover {
+    background-color: #6d28d9;
+}
+
+@media (max-width: 768px) {
+
+    .menu-principal__contenido {
+        flex-direction: column;
+
+        gap: 16px;
+
+        padding: 16px;
+    }
+
+    .menu-principal__logo {
+        font-size: 24px;
+
+        text-align: center;
+    }
+
+    .menu-principal__navegacion {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .menu-principal__enlace {
+        width: 100%;
+    }
+
+}

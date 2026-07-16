@@ -1,0 +1,140 @@
+.importar-pagos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.importar-pagos__selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 48px;
+    padding: 12px;
+
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+
+    background-color: #f8fafc;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.importar-pagos__selector:hover {
+    border-color: #6366f1;
+    background-color: #eef2ff;
+}
+
+.importar-pagos__selector input {
+    display: none;
+}
+
+.importar-pagos__selector span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.importar-pagos__resumen {
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    background-color: #ecfdf5;
+    color: #166534;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.importar-pagos__lista {
+    max-height: 160px;
+
+    overflow-y: auto;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    background-color: #ffffff;
+}
+
+/* Scroll */
+.importar-pagos__lista::-webkit-scrollbar {
+    width: 8px;
+}
+
+.importar-pagos__lista::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 999px;
+}
+
+.importar-pagos__lista::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
+}
+
+.importar-pagos__lista::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.importar-pagos__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 14px;
+
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.importar-pagos__item:last-child {
+    border-bottom: none;
+}
+
+.importar-pagos__item span {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.importar-pagos__item strong {
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.importar-pagos__boton {
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.importar-pagos__boton:hover:not(:disabled) {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.importar-pagos__boton:disabled {
+    background-color: #d1d5db;
+    color: #6b7280;
+    cursor: not-allowed;
+}

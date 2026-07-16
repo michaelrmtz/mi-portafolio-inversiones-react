@@ -1,0 +1,315 @@
+.mundo-patrimonial {
+    background-color: white;
+    padding: 16px;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mundo-patrimonial__encabezado {
+    margin-bottom: 12px;
+}
+
+.mundo-patrimonial__badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.mundo-patrimonial__escenario {
+    position: relative;
+
+    height: 120px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #dbeafe 0%,
+            #eff6ff 60%,
+            #bbf7d0 60%,
+            #86efac 100%
+        );
+}
+
+/* NUBE */
+
+.mundo-patrimonial__nube {
+    position: absolute;
+
+    top: 15px;
+
+    left: 40px;
+
+    font-size: 28px;
+
+    animation:
+        nube 20s linear infinite;
+}
+
+/* OJOS */
+
+.mundo-patrimonial__ojos {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 45px;
+
+    transform: translateX(-50%);
+
+    font-size: 30px;
+
+    animation:
+        mirar 4s ease-in-out infinite;
+}
+
+/* PERSONAJE */
+
+.mundo-patrimonial__personaje {
+    position: absolute;
+
+    left: 38%;
+
+    bottom: 10px;
+
+    font-size: 52px;
+
+    transform: translateX(-50%);
+
+    animation:
+        respirar 3s ease-in-out infinite;
+
+    z-index: 10;
+}
+
+.mundo-patrimonial__personaje--caminando {
+    animation:
+        caminar 6s ease-in-out infinite,
+        respirar 3s ease-in-out infinite;
+}
+
+/* CRECIMIENTO TEMPRANO */
+
+.mundo-patrimonial__planta {
+    position: absolute;
+
+    left: 18%;
+
+    bottom: 10px;
+
+    font-size: 20px;
+}
+
+.mundo-patrimonial__flores {
+    position: absolute;
+
+    left: 28%;
+
+    bottom: 8px;
+
+    font-size: 18px;
+}
+
+.mundo-patrimonial__arbol {
+    position: absolute;
+
+    right: 22%;
+
+    bottom: 8px;
+
+    font-size: 28px;
+}
+
+.mundo-patrimonial__mochila {
+    position: absolute;
+
+    left: 57%;
+
+    bottom: 12px;
+
+    font-size: 34px;
+
+    z-index: 9;
+}
+
+.mundo-patrimonial__portafolio {
+    position: absolute;
+
+    left: 57%;
+
+    bottom: 12px;
+
+    font-size: 34px;
+
+    z-index: 9;
+}
+
+.mundo-patrimonial__personaje--con-casa {
+    left: 38%;
+}
+
+.mundo-patrimonial__casa {
+    position: absolute;
+
+    right: 8%;
+
+    bottom: 8px;
+
+    font-size: 46px;
+}
+
+.mundo-patrimonial__alberca {
+    position: absolute;
+
+    left: 12%;
+
+    bottom: 8px;
+
+    font-size: 28px;
+}
+
+.mundo-patrimonial__palmera {
+    position: absolute;
+
+    right: 26%;
+    bottom: 8px;
+
+    font-size: 30px;
+}
+
+.mundo-patrimonial__playa {
+    position: absolute;
+
+    left: 22%;
+
+    bottom: 8px;
+
+    font-size: 28px;
+}
+
+.mundo-patrimonial__avion {
+    position: absolute;
+
+    top: 12px;
+
+    font-size: 22px;
+
+    animation:
+        volar 12s linear infinite;
+}
+
+.mundo-patrimonial__helicoptero {
+    position: absolute;
+
+    top: 12px;
+
+    left: 15%;
+
+    font-size: 24px;
+}
+
+/* ANIMACIONES */
+
+@keyframes mirar {
+
+    0%,
+    100% {
+        transform: translateX(-50%);
+    }
+
+    25% {
+        transform:
+            translateX(calc(-50% - 8px));
+    }
+
+    75% {
+        transform:
+            translateX(calc(-50% + 8px));
+    }
+}
+
+@keyframes respirar {
+
+    0% {
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(-4px)
+            scale(1.03);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes caminar {
+
+    0% {
+        left: 25%;
+    }
+
+    50% {
+        left: 55%;
+    }
+
+    100% {
+        left: 25%;
+    }
+}
+
+@keyframes nube {
+
+    0% {
+        left: -40px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes volar {
+
+    0% {
+        right: -40px;
+    }
+
+    100% {
+        right: 110%;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .mundo-patrimonial__escenario {
+        max-width: 900px;
+
+        margin: 0 auto;
+    }
+
+}

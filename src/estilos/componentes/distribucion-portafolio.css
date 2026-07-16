@@ -1,0 +1,147 @@
+.contenedor-distribucion-portafolio {
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background-color: white;
+
+    border-radius: 24px;
+
+    padding: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contenedor-titulo-distribucion h3 {
+    margin: 0 0 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+/* ESTADO VACÍO */
+
+.contenedor-distribucion-vacia {
+    min-height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 8px;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+}
+
+.contenedor-distribucion-vacia h2 {
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.contenedor-distribucion-vacia p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 18px;
+
+    color: #6b7280;
+}
+
+/* LISTA */
+
+.contenedor-lista-distribucion {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    max-height: 118px;
+
+    overflow-y: auto;
+
+    padding-right: 4px;
+}
+
+.contenedor-lista-distribucion:has(.contenedor-distribucion-vacia) {
+    overflow: hidden;
+}
+
+.contenedor-elementos {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.contenedor-elementos:first-child {
+    background: #f8faff;
+    border-radius: 8px;
+}
+
+.contenedor-elementos:last-child {
+    border-bottom: none;
+}
+
+.contenedor-elemento-nombre {
+    font-size: 14px;
+
+    color: #374151;
+}
+
+.contenedor-elemento-porcentaje {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #6366f1;
+}
+
+/* SCROLL */
+
+.contenedor-lista-distribucion::-webkit-scrollbar {
+    width: 5px;
+}
+
+.contenedor-lista-distribucion::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.contenedor-lista-distribucion::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+
+    border-radius: 999px;
+}
+
+.contenedor-lista-distribucion::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
