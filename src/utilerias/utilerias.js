@@ -8,46 +8,23 @@ export const formatearMoneda = (cantidad) => {
     )}`;
 };
 
-export const obtenerDiasTranscurridos = (
-    fecha
-) => {
+export const obtenerDiasTranscurridos = fecha => {
 
     const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
 
-    hoy.setHours(
-        0,
-        0,
-        0,
-        0
-    );
+    const [anio, mes, dia] = fecha.split("-").map(Number);
+    const fechaCreacion = new Date(anio, mes - 1, dia);
 
-    const [anio, mes, dia] =
-        fecha.split("-").map(Number);
+    fechaCreacion.setHours(0, 0, 0, 0);
+    return Math.floor((hoy - fechaCreacion) / (1000 * 60 * 60 * 24));
+};
 
-    const fechaCreacion =
-        new Date(
-            anio,
-            mes - 1,
-            dia
-        );
+export const ocultarMonto = (valor, mostrar, formateador) => {
 
-    fechaCreacion.setHours(
-        0,
-        0,
-        0,
-        0
-    );
+    if (!mostrar) {
+        return "$••••••••";
+    }
 
-    return Math.floor(
-        (
-            hoy -
-            fechaCreacion
-        ) /
-        (
-            1000 *
-            60 *
-            60 *
-            24
-        )
-    );
+    return formateador(valor);
 };

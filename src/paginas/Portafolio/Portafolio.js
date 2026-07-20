@@ -46,6 +46,7 @@ const Portafolio = () => {
     const [modalEditarPagoAbierto, setModalEditarPagoAbierto] = useState(false);
     const [pagoSeleccionado, setPagoSeleccionado] = useState(null);
 
+    const [mostrarMontos, setMostrarMontos] = useState(() => { return localStorage.getItem("mostrarMontos") !== 'false' });
 
     const abrirModal = (institucion) => {
         setInstitucionSeleccionada(institucion);
@@ -104,6 +105,10 @@ const Portafolio = () => {
         }
     }, [instituciones, institucionSeleccionada, inversionDetallePagosSeleccionada]);
 
+    useEffect(() => {
+        localStorage.setItem("mostrarMontos", mostrarMontos);
+    }, [mostrarMontos]);
+
     return (
         <div className="contenedor-portafolio">
 
@@ -111,6 +116,8 @@ const Portafolio = () => {
             <EncabezadoPortafolio
                 capitalTotal={capitalTotalFormateado}
                 totalInstituciones={instituciones.length}
+                mostrarMontos={mostrarMontos}
+                setMostrarMontos={setMostrarMontos}
             />
 
             {/* Panel patrimonial */}
@@ -154,6 +161,7 @@ const Portafolio = () => {
                         abrirModalDetallePagos={(inversion) => abrirModalDetallePagos(institucion, inversion)}
                         editarInstitucion={() => { abrirModalEditarInstitucion(institucion) }}
                         abrirModalImportarPagos={(inversion) => { abrirModalImportarPagos(institucion, inversion) }}
+                        mostrarMontos={mostrarMontos}
                     />
                 ))}
             </section>

@@ -3,7 +3,7 @@ import { formatearMoneda, obtenerDiasTranscurridos } from "../../utilerias/utile
 import "../../estilos/componentes/tarjeta-institucion.css";
 
 const TarjetaInstitucion = ({ id, nombre, color, inversiones, eliminarInstitucion, editarInstitucion, abrirModal, seleccionarInversion, eliminarInversion, abrirModalPago,
-    abrirModalDetallePagos, abrirModalImportarPagos }) => {
+    abrirModalDetallePagos, abrirModalImportarPagos, mostrarMontos }) => {
 
     const [mostrarInversiones, setMostrarInversiones] = useState(false);
 
@@ -108,14 +108,15 @@ const TarjetaInstitucion = ({ id, nombre, color, inversiones, eliminarInstitucio
             </div>
 
             <p className="tarjeta-institucion__monto">
-                {formatearMoneda(montoTotal)}
+                {
+                    mostrarMontos ? formatearMoneda(montoTotal) : '•••••••'
+                }
             </p>
 
             <p className="tarjeta-institucion__rendimiento">
-                +
-                {formatearMoneda(
-                    rendimientoTotal
-                )}
+                {
+                    mostrarMontos ? `+${formatearMoneda(rendimientoTotal)}` : "+$••••••"
+                }
             </p>
 
             <div className="tarjeta-institucion__pie">
@@ -166,9 +167,9 @@ const TarjetaInstitucion = ({ id, nombre, color, inversiones, eliminarInstitucio
                                     <div className="tarjeta-institucion__detalle">
 
                                         <strong className="tarjeta-institucion__monto-inversion">
-                                            {formatearMoneda(
-                                                inversion.monto
-                                            )}
+                                            {
+                                                mostrarMontos ? formatearMoneda(inversion.monto) : '•••••••'
+                                            }
                                         </strong>
 
                                     </div>
