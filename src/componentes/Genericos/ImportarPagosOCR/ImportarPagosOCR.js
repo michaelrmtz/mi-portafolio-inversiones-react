@@ -46,7 +46,7 @@ const ImportarPagosOCR = ({ institucionSeleccionada, inversion, editarInversion,
                 importe: Number(
                     importe.replace(/,/g, "")
                 ),
-                cobrado: false
+                pagado: false
             });
         }
 
