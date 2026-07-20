@@ -20,7 +20,7 @@ const Portafolio = () => {
     const { instituciones, nombreInstitucion, setNombreInstitucion, agregarInstitucion, eliminarInstitucion, editarInstitucion,
         capitalTotalFormateado, agregarInversion, editarInversion, eliminarInversion, setInstituciones, capitalTotal } = useInstituciones();
 
-    const { agregarPago, marcarPagoComoCobrado } = usePagos(instituciones, setInstituciones);
+    const { agregarPago, marcarPagoComoCobrado, eliminarPago, editarPago } = usePagos(instituciones, setInstituciones);
 
     const [modalAbierto, setModalAbierto] = useState(false);
     const [institucionSeleccionada, setInstitucionSeleccionada] = useState(null);
@@ -42,6 +42,10 @@ const Portafolio = () => {
     const [modalImportarPagosAbierto, setModalImportarPagosAbierto] = useState(false);
 
     const [inversionImportarPagos, setInversionImportarPagos] = useState(null);
+
+    const [modalEditarPagoAbierto, setModalEditarPagoAbierto] = useState(false);
+    const [pagoSeleccionado, setPagoSeleccionado] = useState(null);
+
 
     const abrirModal = (institucion) => {
         setInstitucionSeleccionada(institucion);
@@ -80,6 +84,11 @@ const Portafolio = () => {
         setInstitucionSeleccionada(institucion);
         setInversionImportarPagos(inversion);
         setModalImportarPagosAbierto(true);
+    };
+
+    const abrirModalEditarPago = (pago) => {
+        setPagoSeleccionado(pago);
+        setModalEditarPagoAbierto(true);
     };
 
     useEffect(() => {
@@ -218,6 +227,8 @@ const Portafolio = () => {
                     inversionPagosSeleccionada={inversionDetallePagosSeleccionada}
                     institucionSeleccionada={institucionSeleccionada}
                     marcarPagoComoCobrado={marcarPagoComoCobrado}
+                    eliminarPago={eliminarPago}
+                    abrirModalEditarPago={abrirModalEditarPago}
                 />
             </Modal>
 
@@ -283,6 +294,36 @@ const Portafolio = () => {
                     onImportado={() => {
                         setModalImportarPagosAbierto(false);
                         setInversionImportarPagos(null);
+                    }}
+                />
+            </Modal>
+
+            <Modal
+                abierto={modalEditarPagoAbierto}
+                titulo="Editar pago"
+                onClose={() => {
+
+                    setModalEditarPagoAbierto(false);
+
+                    setPagoSeleccionado(null);
+
+                }}
+            >
+                <FormularioPago
+                    institucionSeleccionada={
+                        institucionSeleccionada
+                    }
+                    inversionPagoSeleccionada={
+                        inversionDetallePagosSeleccionada
+                    }
+                    editarPago={editarPago}
+                    pagoSeleccionado={pagoSeleccionado}
+                    alGuardar={() => {
+
+                        setModalEditarPagoAbierto(false);
+
+                        setPagoSeleccionado(null);
+
                     }}
                 />
             </Modal>

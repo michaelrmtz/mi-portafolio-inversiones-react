@@ -20,7 +20,7 @@ const pasosTutorial = [
     },
         {
         target: ".tarjeta-proximos-pagos",
-        content: "Desde aquí podras enterarte de tus próximos pagos de inversiones."
+        content: "Desde aquí podrás enterarte de tus próximos pagos de inversiones."
     },
     {
         target: ".formulario-institucion",

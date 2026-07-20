@@ -2,7 +2,7 @@ import React from "react";
 import { formatearMoneda } from "../../utilerias/utilerias";
 import "../../estilos/componentes/detalle-pagos.css";
 
-const DetallePagos = ({ inversionPagosSeleccionada, institucionSeleccionada, marcarPagoComoCobrado }) => {
+const DetallePagos = ({ inversionPagosSeleccionada, institucionSeleccionada, marcarPagoComoCobrado, eliminarPago, abrirModalEditarPago }) => {
 
     const pagos = inversionPagosSeleccionada?.pagos || [];
 
@@ -125,11 +125,43 @@ const DetallePagos = ({ inversionPagosSeleccionada, institucionSeleccionada, mar
                                     ✅
                                 </button>
 
-                                <button type="button">
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        abrirModalEditarPago(
+                                            pago
+                                        );
+                                    }}
+                                >
                                     ✏️
                                 </button>
 
-                                <button type="button">
+                                <button
+                                    type="button"
+                                    onClick={() => {
+
+                                        if (
+                                            !institucionSeleccionada ||
+                                            !inversionPagosSeleccionada
+                                        ) {
+                                            return;
+                                        }
+
+                                        const confirmar =
+                                            window.confirm("¿Eliminar este pago?");
+
+                                        if (!confirmar) {
+                                            return;
+                                        }
+
+                                        eliminarPago(
+                                            institucionSeleccionada.id,
+                                            inversionPagosSeleccionada.id,
+                                            pago.id
+                                        );
+
+                                    }}
+                                >
                                     🗑️
                                 </button>
                             </div>
