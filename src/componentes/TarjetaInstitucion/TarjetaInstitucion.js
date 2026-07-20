@@ -236,6 +236,10 @@ const TarjetaInstitucion = ({ id, nombre, color, inversiones, eliminarInstitucio
                                             title="Eliminar"
                                             onClick={(event) => {
                                                 event.stopPropagation();
+                                                const confirmar = window.confirm(`¿Eliminar la inversión "${inversion.nombre}"?`);
+                                                if (!confirmar) {
+                                                    return;
+                                                }
                                                 eliminarInversion(id, inversion.id);
                                             }}
                                         >
