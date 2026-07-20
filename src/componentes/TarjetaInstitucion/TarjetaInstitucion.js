@@ -10,19 +10,13 @@ const TarjetaInstitucion = ({ id, nombre, color, inversiones, eliminarInstitucio
     const montoTotal = inversiones.reduce(
         (total, inversion) => {
 
-            if (inversion.frecuenciaRendimiento === "diario" && inversion.fechaCreacion) {
+            if (inversion.tipoSeguimiento === "automatico" && inversion.fechaCreacion) {
 
                 const diasTranscurridos = obtenerDiasTranscurridos(inversion.fechaCreacion);
 
-                const rendimientoDiario =
-                    (
-                        inversion.monto *
-                        (inversion.tasa || 0)
-                    ) / 100 / 365;
+                const rendimientoDiario = (inversion.monto * (inversion.tasa || 0)) / 100 / 365;
 
-                const rendimientoAcumulado =
-                    rendimientoDiario *
-                    diasTranscurridos;
+                const rendimientoAcumulado = rendimientoDiario * diasTranscurridos;
 
                 return (
                     total +
@@ -30,7 +24,6 @@ const TarjetaInstitucion = ({ id, nombre, color, inversiones, eliminarInstitucio
                     rendimientoAcumulado
                 );
             }
-
             return total + inversion.monto;
         },
         0
@@ -48,24 +41,10 @@ const TarjetaInstitucion = ({ id, nombre, color, inversiones, eliminarInstitucio
 
             let rendimientoCalculado = 0;
 
-            if (
-                inversion.frecuenciaRendimiento === "diario" &&
-                inversion.fechaCreacion
-            ) {
-                const diasTranscurridos =
-                    obtenerDiasTranscurridos(
-                        inversion.fechaCreacion
-                    );
-
-                const rendimientoDiario =
-                    (
-                        inversion.monto *
-                        (inversion.tasa || 0)
-                    ) / 100 / 365;
-
-                rendimientoCalculado =
-                    rendimientoDiario *
-                    diasTranscurridos;
+            if (inversion.tipoSeguimiento === "automatico" && inversion.fechaCreacion) {
+                const diasTranscurridos = obtenerDiasTranscurridos(inversion.fechaCreacion);
+                const rendimientoDiario = (inversion.monto * (inversion.tasa || 0)) / 100 / 365;
+                rendimientoCalculado = rendimientoDiario * diasTranscurridos;
             }
 
             return (
